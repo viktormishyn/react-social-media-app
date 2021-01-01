@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# DEPLOYMENT
+
+1. Install Node.js, npm,
+    ```bash
+   sudo apt install nodejs 
+   sudo apt install npm
+   ```
+2. Install packages
+   ```bash
+   npm install
+   ```
