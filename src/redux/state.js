@@ -1,4 +1,4 @@
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree = null //instead of circular import we use callback function
 
 let state = {
     profilePage: {
@@ -30,7 +30,9 @@ let state = {
     }
 }
 
-export let addPost = () => {
+window.state = state;
+
+export const addPost = () => {
     let newPost = {
         id: 5,
         post: state.profilePage.newPostText,
@@ -41,10 +43,13 @@ export let addPost = () => {
     rerenderEntireTree(state)
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText
     rerenderEntireTree(state)
 }
 
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer
+}
 
 export default state;
