@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state}
+            <App state={store.getState()}
                  dispatch={store.dispatch.bind(store)}/>
         </React.StrictMode>,
         document.getElementById('root')
@@ -16,6 +16,4 @@ let rerenderEntireTree = (state) => {
 
 rerenderEntireTree(store.getState())
 
-store.subscribe(() => {
-    rerenderEntireTree(store.getState())
-})
+store.subscribe(rerenderEntireTree)
