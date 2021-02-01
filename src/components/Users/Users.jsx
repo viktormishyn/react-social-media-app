@@ -24,7 +24,8 @@ class Users extends React.Component {
             <div>
                 <div>
                     {pages.map(p => {
-                        return <span className={this.props.currentPage === p && s.selectedPage}>{p}</span>
+                        return <span className={this.props.currentPage === p && s.selectedPage}
+                        onClick={() => {this.props.setCurrentPage(p)}}>{p}</span>
                         // only if true {true && s.selectedPage}. Another way {true ? s.selectedPage : ""}
                     })}
                 </div>
