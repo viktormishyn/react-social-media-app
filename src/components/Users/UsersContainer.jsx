@@ -10,7 +10,6 @@ import {
     unfollow
 } from "../../redux/users-reducer";
 import * as axios from "axios";
-import preloader from "../../assets/images/preloader.svg"
 import Preloader from "../common/Preloader/Preloader";
 
 class UsersContainer extends React.Component {
@@ -83,10 +82,6 @@ let mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, {
-    follow: follow,
-    unfollow: unfollow,
-    setUsers: setUsers,
-    setCurrentPage: setCurrentPage,
-    setTotalUsersCount: setTotalUsersCount,
-    toggleIsFetching: toggleIsFetching
+    follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount,
+    toggleIsFetching
 })(UsersContainer)
