@@ -13,4 +13,7 @@ let reducers = combineReducers({
 
 let store = createStore(reducers)
 
+window.store = store
+// store can be accessed whom anywhere using store.getState() method
+
 export default store
