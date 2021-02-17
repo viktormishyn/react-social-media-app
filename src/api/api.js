@@ -6,4 +6,10 @@ export const getUsers = (currentPage, pageSize) => {
         {
             withCredentials: true
         })
+        .then(response => response.data)
+    // chain of promises in order to minimize information passed to the component
+    // literally
+    //     .then(response => {
+    //         return response.data
+    //     })
 }
