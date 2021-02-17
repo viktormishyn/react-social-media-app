@@ -8,12 +8,10 @@ const instance = axios.create({
     }
 })
 
-export const getUsers = (currentPage, pageSize) => {
-    return instance.get(`users?page=${currentPage}&count=${pageSize}`)
-        .then(response => response.data)
-    // chain of promises in order to minimize information passed to the component
-    // literally
-    //     .then(response => {
-    //         return response.data
-    //     })
+export const usersAPI = {
+    getUsers(currentPage, pageSize) {
+        return instance.get(`users?page=${currentPage}&count=${pageSize}`)
+            .then(response => response.data)
+    }
 }
+
